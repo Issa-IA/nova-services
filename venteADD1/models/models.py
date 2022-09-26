@@ -67,6 +67,7 @@ class SaleOrderHerit(models.Model):
     def rcuperenumerodossier(self):
         for rec in self:
             rec.sale_dossier = rec.opportunity_id.num_dossier
+            rec.sale_type_client = rec.opportunity_id.action_field
 
 
     @api.onchange("partner_id")
