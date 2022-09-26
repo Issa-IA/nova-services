@@ -8,9 +8,7 @@
             <xpath expr="//field[@name='quantity_done']" position ="after">
                  <field name="acount_retour_serie"/>
             </xpath>
-          <xpath expr="//field[@name='lot_id']" position ="before">
-                 <field name="acount_retour_serie"/>
-            </xpath>
+         
 
         </field>
     </record>
