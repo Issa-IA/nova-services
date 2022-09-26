@@ -1,0 +1,26 @@
+<odoo>
+<data>
+
+
+
+<record id="res_partner_search_advanced" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="partner_parc_ids" string="Dossier N°" filter_domain="[('partner_parc_ids.fleet_dossier_devis','ilike',self)]"/>
+                <field name="partner_parc_ids" string="N° serie" filter_domain="[('partner_parc_ids.fleet_serie','ilike',self)]"/>
+                <field name="partner_parc_ids" string="Modèle" filter_domain="[('partner_parc_ids.fleet_Modele','ilike',self)]"/>
+                <field name="partner_parc_ids" string="Marque" filter_domain="[('partner_parc_ids.fleet_marque','ilike',self)]"/>
+                <field name="partner_parc_ids" string="Fournisseur" filter_domain="[('partner_parc_ids.fleet_fournisseur','ilike',self)]"/>
+                <field name="partner_parc_ids" string="Periodicité" filter_domain="[('partner_parc_ids.fleet_periodicite','ilike',self)]"/>                
+                <field name="partner_parc_ids" string="Commerciale" filter_domain="[('partner_parc_ids.fleet_user_id','ilike',self)]"/>                
+                
+            </xpath>
+        </field>
+</record>
+
+
+</data>
+</odoo>
