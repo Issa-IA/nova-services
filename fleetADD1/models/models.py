@@ -3,9 +3,24 @@ from datetime import date
 import math
 from dateutil.relativedelta import relativedelta
 
+############### new model
+class typformat(models.Model):
+    _name        = 'typformat'
+    _description = 'Type Info infos MATERIELS'
+    name         = fields.Char(string='Format')
+    def name_get(self):
+        result = []
+        for model in self:
+            name = model.name
+            result.append((model.id, name))
+        return result
+############
+
+
 class fleetNameGET(models.Model):
     _inherit = 'fleet.vehicle.model'
     type_materiels = fields.Selection([('print', 'Print'), ('sauvegarde', 'Sauvegarde'), ('solution', 'Solution'), ('ecran', 'Ecran')],string='Type de matériel')
+    model_format1 = fields.Many2one('typformat',string='Format')
     model_format = fields.Selection([('a3', 'A3'), ('a2', 'A4')], string='Format')
     model_attachment_ids = fields.Many2many(comodel_name='ir.attachment', string='Pièces jointes')
 
@@ -153,10 +168,8 @@ class FleetContINHERIT(models.Model):
     def fleet_type_compute(self):
         for rec in self:
             if rec.fleet_Modele.category_id:
-                if rec.fleet_Modele.model_format == 'a3':
-                    rec.fleet_type_1 = str(rec.fleet_Modele.category_id.name) + ' ' + 'A3'
-                elif rec.fleet_Modele.model_format == 'a4':
-                    rec.fleet_type_1 = str(rec.fleet_Modele.category_id.name) + ' ' + 'A4'
+                if rec.fleet_Modele.model_format1:
+                    rec.fleet_type_1 = str(rec.fleet_Modele.category_id.name) + ' ' + str(rec.fleet_Modele.model_format1.name)
                 else:
                     rec.fleet_type_1 = str(rec.fleet_Modele.category_id.name)
             else:
