@@ -13,10 +13,8 @@ class ProductProductInherit(models.Model):
     def product_type_compute(self):
         for rec in self:
             if rec.product_Modele.category_id:
-                if rec.product_Modele.model_format == 'a3':
-                    rec.product_type = str(rec.product_Modele.category_id.name) + ' ' + 'A3'
-                elif rec.product_Modele.model_format == 'a4':
-                    rec.product_type = str(rec.product_Modele.category_id.name) + ' ' + 'A4'
+                if rec.product_Modele.model_format1:
+                    rec.product_type = str(rec.product_Modele.category_id.name) + ' ' + str(rec.product_Modele.model_format1.name)
                 else:
                     rec.product_type = str(rec.product_Modele.category_id.name)
             else:
