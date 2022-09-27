@@ -19,6 +19,12 @@
                                     <span class="o_stat_text">Reprise</span>
                                 </div>
                 </button>
+                <button name="action_open_acount" type="object" class="oe_stat_button" icon="fa-pencil">
+                                <div class="o_stat_info">
+                                    <field name="account_count" class="o_stat_value"/>
+                                    <span class="o_stat_text">Facture F </span>
+                                </div>
+                </button>
                 <button name="action_open_rfq" type="object" class="oe_stat_button" icon="fa-credit-card">
                                 <div class="o_stat_info">
                                     <field name="par_mat_count" class="o_stat_value"/>
