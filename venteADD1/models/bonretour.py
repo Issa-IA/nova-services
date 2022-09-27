@@ -86,7 +86,10 @@ class Bonretourtable(models.Model):
     ##########new
     bonretour_stock_move = fields.Many2one('stock.move', string="stock move")
 
-
+class StockmoveLineHeritretour(models.Model):
+    _inherit = 'stock.move.line'
+    acount_retour_serie_line = fields.Char(string="N° serie à retourner")
+    
 class StockmoveHeritretour(models.Model):
     _inherit = 'stock.move'
     acount_retour_serie = fields.Char(string="N° serie")
