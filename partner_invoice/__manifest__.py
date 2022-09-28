@@ -20,6 +20,7 @@
     ],
     'data': [
         'view/partner_invoice.xml',
+        'view/groupe_commercial_access.xml',
     ],
     'demo': [
     ],
