@@ -57,6 +57,8 @@ class SaleOrderHerit(models.Model):
 
     ############ zip street city
     sale_type_client = fields.Selection([('nouveau_client', 'Nouveau client'), ('conversion', 'Conversion'),('additionnel', 'Additionnel')], string='Type de vente')
+    sale_type_client1 = fields.Selection([('nouveau_client', 'Nouveau client'), ('conversion', 'Conversion'),
+                                         ('additionnel', 'Additionnel')], string='Type de vente')
     street_client = fields.Char(compute="compute_street_client")
     zip_client = fields.Char(compute="compute_zip_client")
     city_client = fields.Char(compute="compute_city_client")
@@ -67,7 +69,7 @@ class SaleOrderHerit(models.Model):
     def rcuperenumerodossier(self):
         for rec in self:
             rec.sale_dossier = rec.opportunity_id.num_dossier
-            rec.sale_type_client = rec.opportunity_id.action_field
+            rec.sale_type_client1 = rec.opportunity_id.action_field
 
 
     @api.onchange("partner_id")
