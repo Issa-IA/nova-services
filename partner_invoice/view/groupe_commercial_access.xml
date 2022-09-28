@@ -1,0 +1,34 @@
+<odoo>
+<data>
+<record id="contact_form_view_form2" model="ir.ui.view">
+            <field name="name">contact.form.inherit2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="partner_invoice.partner_form_invoice" />
+            <field name="groups_id" eval="[(6, 0, [ref('droits_d_acces.group_Technicien_contact') ])]" />
+            <field name="arch" type="xml">
+                <field name="augmentation_sav_bool" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+                <field name="augmentation_sav" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+                 <field name="code_service" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+                <field name="pfr" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+                <field name="type_facture" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+                <field name="moyen_de_paiement" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+  <!--  <field name="test_field" groups="external_id_of_group"/>  visible que à ce groupe -->
+</record>
+</data>
+</odoo>
+
+
+
