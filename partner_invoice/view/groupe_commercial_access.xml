@@ -24,6 +24,9 @@
                 <field name="moyen_de_paiement" position="attributes">
                    <attribute name="readonly">1</attribute>
                 </field>
+                <field name="siret" position="attributes">
+                   <attribute name="readonly">1</attribute>
+                </field> 
             </field>
   <!--  <field name="test_field" groups="external_id_of_group"/>  visible que à ce groupe -->
 </record>
