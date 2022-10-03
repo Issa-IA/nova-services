@@ -12,7 +12,7 @@ class PartnerInvoiceHerit(models.Model):
     moyen_de_paiement= fields.Selection([('prelevement', 'Prélèvement'),('chorus', 'Chorus'),('autres', 'Autres')],default='prelevement')
     
     def write(self, vals):
-        res = super(PartnerModelHerit, self).write(vals)
+        res = super(PartnerInvoiceHerit, self).write(vals)
         for rec in self:
            rec.x_studio_group_ok = rec.env.user.has_group('droits_d_acces.group_Technicien_contact')
         return res
