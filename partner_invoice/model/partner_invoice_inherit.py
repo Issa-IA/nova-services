@@ -10,6 +10,12 @@ class PartnerInvoiceHerit(models.Model):
     augmentation_sav_bool= fields.Boolean(string="Augmentation SAV", default=True)
     type_facture = fields.Selection([('par_dossier', 'facture par dossier'),('tout_dossiers', 'facturer tout les dossiers')],default='par_dossier')
     moyen_de_paiement= fields.Selection([('prelevement', 'Prélèvement'),('chorus', 'Chorus'),('autres', 'Autres')],default='prelevement')
+    
+    def write(self, vals):
+        res = super(PartnerModelHerit, self).write(vals)
+        for rec in self:
+           rec.x_studio_group_ok = rec.env.user.has_group('droits_d_acces.group_Technicien_contact')
+        return res
 
 
 
