@@ -50,7 +50,7 @@ class FleetContINHERIT(models.Model):
     model_id = fields.Many2one(required=False )
     fleet_dossier_devis = fields.Char(string='Dossier N°')
     # rendre the default = actif
-    state_id = fields.Many2one(default=lambda self: self.env['fleet.vehicle.state'].search([('name', '=', "Actif")])[0].id)
+    state_id = fields.Many2one(default=1)
     ####facture
     comp_couleur_depart = fields.Integer(string="Compteur de départ Couleur", default='0')
     comp_noir_depart = fields.Integer(string="Compteur de départ NB", default='0')
