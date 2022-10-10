@@ -32,7 +32,8 @@
                         <page string="Facturation" name="facturation">
                             <group>
                                 <group>
-                                    <field name="goup_commerc_ok"  invisible="1"></field>
+                                    <field name="goup_commerc_ok"  invisible="1"></field>                                        
+                                    <field  name="x_studio_type_facture"/>
                                     <field  name="type_facture"/>
                                     <field name="pfr"></field>
                                     <field name="code_service"></field>
