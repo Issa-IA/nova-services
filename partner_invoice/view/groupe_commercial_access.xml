@@ -18,7 +18,7 @@
                 <field name="pfr" position="attributes">
                    <attribute name="readonly">1</attribute>
                 </field>
-                <field name="type_facture" position="attributes">
+                <field name="x_studio_type_facture" position="attributes">
                    <attribute name="invisible">True</attribute>
                 </field>
                 <field name="x_studio_kdfm" position="attributes">
