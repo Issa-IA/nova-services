@@ -8,17 +8,17 @@ class PartnerInvoiceHerit(models.Model):
     code_service = fields.Char('Code service')
     augmentation_sav = fields.Float(string='Augmentation SAV', default=0.05)
     augmentation_sav_bool= fields.Boolean(string="Augmentation SAV", default=True)
-    type_facture = fields.Selection([('par_dossier', 'facture par dossier'),('tout_dossiers', 'facturer tout les dossiers')],default='par_dossier', compute="compute_type_facture" )
+    type_facture = fields.Selection([('par_dossier', 'facture par dossier'),('tout_dossiers', 'facturer tout les dossiers')],default='par_dossier', compute="compute_type_facture_ok" )
     moyen_de_paiement= fields.Selection([('prelevement', 'Prélèvement'),('chorus', 'Chorus'),('autres', 'Autres')],default='prelevement')
     goup_commerc_ok = fields.Char('Type Facture', compute="compute_type_facture")
     goup_commerc_ok_1 = fields.Char('KDFM', compute="compute_type_kdfm")
    
     @api.depends('x_studio_type_facture')
-    def compute_type_kdfm(self):
+    def compute_type_facture_ok(self):
         for rec in self:
-            if rec.x_studio_type_facture == "facturer par dossier"
+            if rec.x_studio_type_facture == "facturer par dossier":
                 rec.type_facture = 'par_dossier'
-            elif rec.x_studio_type_facture == "facturer tout les dossiers"
+            elif rec.x_studio_type_facture == "facturer tout les dossiers":
                 rec.type_facture = "tout_dossiers"
             else:
                 rec.type_facture = 'par_dossier'
