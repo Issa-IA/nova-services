@@ -32,8 +32,8 @@
                         <page string="Facturation" name="facturation">
                             <group>
                                 <group>
-                                   <field name="x_studio_group_ok"></field>
-                                    <field  name="type_facture" attrs="{'readonly':[('x_studio_group_ok','=', True)]}"/>
+                                    <field name="goup_commerc_ok"  invisible="1"></field>
+                                    <field  name="type_facture"/>
                                     <field name="pfr"></field>
                                     <field name="code_service"></field>
                                      <field name="augmentation_sav_bool"></field>
@@ -42,7 +42,8 @@
                                 <group>
                                     <field name="moyen_de_paiement"></field>
                                         <field name="siret"></field>
-                                        <field name="x_studio_kdfm" attrs="{'readonly':[('x_studio_group_ok','=', True)]}"></field>
+                                        <field name="goup_commerc_ok_1"  invisible="1"></field>
+                                        <field name="x_studio_kdfm"></field>
                                 </group>
                             </group>
 
