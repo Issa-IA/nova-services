@@ -19,14 +19,21 @@
                    <attribute name="readonly">1</attribute>
                 </field>
                 <field name="type_facture" position="attributes">
-                   <attribute name="readonly">1</attribute>
+                   <attribute name="invisible">True</attribute>
                 </field>
+                <field name="x_studio_kdfm" position="attributes">
+                   <attribute name="invisible">True</attribute>
+                </field>
+                 <field name="goup_commerc_ok" position="attributes">
+                   <attribute name="invisible">0</attribute>
+                </field>    
+                 <field name="goup_commerc_ok_1" position="attributes">
+                   <attribute name="invisible">0</attribute>
+                </field>        
                 <field name="moyen_de_paiement" position="attributes">
                    <attribute name="readonly">1</attribute>
                 </field>
-                <field name="siret" position="attributes">
-                   <attribute name="readonly">1</attribute>
-                </field> 
+                
             </field>
   <!--  <field name="test_field" groups="external_id_of_group"/>  visible que à ce groupe -->
 </record>
