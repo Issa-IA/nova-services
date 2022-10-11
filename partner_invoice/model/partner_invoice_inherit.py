@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 class PartnerInvoiceHerit(models.Model):
     _inherit = 'res.partner'
-
+    user_id = fields.Many2one(default = lambda self: self.env.user)
     pfr = fields.Monetary('PFR', default=20)
     code_service = fields.Char('Code service')
     augmentation_sav = fields.Float(string='Augmentation SAV', default=0.05)
