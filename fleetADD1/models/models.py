@@ -65,7 +65,7 @@ class FleetContINHERIT(models.Model):
     fleet_date_inst   = fields.Date("Date d'installation",default=date.today())
     fleet_expiration_date = fields.Date("Date de fin de contrat")
     fleet_duree       = fields.Integer("Durée de contrat")
-    fleet_duree_rest  = fields.Integer("Durée restante",compute='duree_rest')
+    fleet_duree_rest  = fields.Integer("Durée restante",compute='duree_rest',store=True)
     fleet_prix_HT     = fields.Monetary("Prix HT")
     fleet_solde_est   = fields.Monetary("Solde estimatif",compute='solde_estimatif')
     fleet_type = fields.Selection([('location', 'Location'), ('vente', 'Vente')],string='Type de vente',default='location')
