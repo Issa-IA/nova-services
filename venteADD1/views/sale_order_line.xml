@@ -45,6 +45,7 @@
                                 <field name="zip_client" nolabel="1"  />&#x2063;&#x2063; <field name="city_client" class="oe_inline"  nolabel="1"/>
                             </div>
                              <field name="sale_type_client1" />
+                             <field name="sale_materiels_vendu " />  
 
                         </group>
                         <group name="order_details_1">
