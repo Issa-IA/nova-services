@@ -1,6 +1,14 @@
 from odoo import models, fields, api
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
+
+class MoveLineHerit(models.Model):
+    _inherit = "account.move.line"
+    ############ if one serie number
+    move_line_serie = fields.Char(string="N° serie")
+    ############
+
+
 class AcountMoveHerit(models.Model):
     _inherit = 'account.move'
     date_de_prelevement  = fields.Date(compute="_compute_date_prelev",string="Date de prélèvement")
