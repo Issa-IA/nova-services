@@ -177,6 +177,10 @@
                                              <tr>
                                                 <td><strong>Frais de restitution</strong> </td>
                                                  <td><field name="sale_frais_restitution" nolabel="1"  /> </td>
+                                                <td><strong>Frais de livraison</strong> </td>
+                                                <td><field name="sale_frais_livraison_new" nolabel="1"  />   </td>    
+                                                <td><strong>Collage</strong> </td>
+                                                <td><field name="sale_collage" nolabel="1"  />   </td>     
                                              </tr>
 
                                   </tbody>
