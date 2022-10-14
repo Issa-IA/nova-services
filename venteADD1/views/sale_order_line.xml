@@ -171,7 +171,7 @@
                                                 <td><field name="sale_finance" nolabel="1"  /> </td>
                                                 <td><strong>&#160;&#160;&#160;&#160;&#160;Loyer</strong> </td>
                                                 <td><field name="sale_loyer" nolabel="1"  />   </td>
-                                                <td><strong>Frais de livraison</strong> </td>
+                                                <td><strong>Frais de logistique à facturer</strong> </td>
                                                 <td><field name="sale_frais" nolabel="1"  />   </td>
                                              </tr>
                                              <tr>
