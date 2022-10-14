@@ -147,10 +147,12 @@ class SaleOrderHerit(models.Model):
     sale_duree   = fields.Integer(string="Durée")
     sale_accord  = fields.Char(string="N° d'accord")
     sale_loyer   = fields.Monetary(string="Loyer")
+    sale_frais_livraison_new   = fields.Monetary(string="Frais de livraison")
     #group 3
     sale_periodicite = fields.Selection([('mens', 'Mensuelle'), ('trim', 'Trimestrielle ')], string='Periodicité')
     sale_reglement   = fields.Selection([('prelevement ', 'Prélevement'), ('mandat', 'Mandat administratif'),('virement', 'Virement '),('cheque', 'Chéque')], string='Mode de reglement')
     sale_frais       = fields.Monetary(string="Frais de livraison")
+    sale_collage       = fields.Text(string="Collage")
     #########  Rachats page
     #group 1
     sale_vr_client      = fields.Monetary(string="Montant du rachat")
