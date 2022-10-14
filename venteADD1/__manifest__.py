@@ -23,6 +23,7 @@
         'views/partner.xml',
         'views/product_inherit.xml',
         'views/serach_advanced_partner.xml',
+        'views/serach_advanced_partner_add.xml',
         'views/bonretour.xml',
         'views/stock_inherit.xml',
         'wizard/create_park.xml',
