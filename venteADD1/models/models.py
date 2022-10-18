@@ -13,6 +13,11 @@ class SaleOrderLineHerit(models.Model):
     price_sale = fields.Monetary(string="Prix d'achat", compute="compute_pricesale")
     designation = fields.Char(compute="compute_designation",string="Désignation")
     order_line_serie = fields.Char(string="N° serie",readonly=True)
+    
+    def _prepare_invoice_line(self,**optional_values):
+        res = super(SaleOrderLineHerit, self)._prepare_invoice_line()  
+        res.update({'move_line_serie': self.order_line_serie, })
+        return res
 
     @api.depends('name')
     def compute_designation(self):
