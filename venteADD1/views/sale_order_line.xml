@@ -38,6 +38,7 @@
             <xpath expr="//form/sheet/group[1]" position="after">
                      <group name="sale_header_1">
                         <group name="partner_details_1">
+                             <field name="partner_id_new" invisible="1" domain="[('user_id','=',context.get('uid'))]"/> 
                             <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
                             <label for="street_client" string="adress" style="color:white;"/>
                             <div>
