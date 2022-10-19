@@ -26,7 +26,7 @@
         'views/serach_advanced_partner_add.xml',
         'views/bonretour.xml',
         'views/stock_inherit.xml',
-        'views/goup_commercial.xml',
+        #'views/goup_commercial.xml',
         'wizard/create_park.xml',
     ],
     # only loaded in demonstration mode
