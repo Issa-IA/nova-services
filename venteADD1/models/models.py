@@ -49,6 +49,9 @@ class SaleOrderHerit(models.Model):
         for rec in self:            
             if rec.partner_id_new:
                 rec.partner_id = rec.partner_id_new
+                rec.street_client = rec.partner_id.street
+                rec.zip_client = rec.partner_id.zip
+                rec.city_client = rec.partner_id.city
     
     #new montant total de rachat
     sale_total_rachat = fields.Float(string='Montant de rachat total',default=0.0,compute="sale_total_rachat_func")
@@ -86,7 +89,7 @@ class SaleOrderHerit(models.Model):
             rec.sale_type_client1 = rec.opportunity_id.action_field
 
 
-    @api.onchange("partner_id","partner_id_new")
+    @api.onchange("partner_id")
     def compute_street_client(self):
         for rec in self:
             if rec.partner_id:
@@ -94,7 +97,7 @@ class SaleOrderHerit(models.Model):
             else:
                 rec.street_client = False
 
-    @api.onchange("partner_id","partner_id_new")
+    @api.onchange("partner_id")
     def compute_zip_client(self):
         for rec in self:
             if rec.partner_id:
@@ -102,7 +105,7 @@ class SaleOrderHerit(models.Model):
             else:
                 rec.zip_client = False
 
-    @api.onchange("partner_id","partner_id_new")
+    @api.onchange("partner_id")
     def compute_city_client(self):
         for rec in self:
             if rec.partner_id:
