@@ -10,7 +10,7 @@
                    <attribute name="invisible">0</attribute>
                 </field>
                 <field name="partner_id" position="attributes">
-                   <attribute name="readonly">1</attribute>
+                   <attribute name="domain">[('user_id','=',context.get('uid'))]</attribute>                           
                 </field>
                         
                  
